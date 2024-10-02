@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import WorkflowCanvas from "./components/WorkflowCanvas";
+import ComponentsSidebar from "./components/Sidebar";
+import "tailwindcss/tailwind.css";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+<div className="h-screen flex flex-col">
+      <Navbar />
+      <div className="flex flex-grow bg-gray-50">
+        <ComponentsSidebar />
+        <div className="flex-grow">
+          <WorkflowCanvas />
+        </div>
+      </div>
     </div>
   );
 }
